@@ -23,16 +23,33 @@ services:
     environment:
       DATABASE_URL: postgresql://app:app@db:5432/printreg
       JWT_SECRET: print-register-dev-secret
+      CLAIM_NAMES: "领取进程甲,领取进程乙"
     depends_on:
       db:
         condition: service_healthy
 
-  worker:
+  worker-a:
     build:
       context: ./backend
     command: ["python", "worker.py"]
     environment:
       DATABASE_URL: postgresql://app:app@db:5432/printreg
+      CLAIM_NAME: "领取进程甲"
+      PROCESS_DELAY_SECONDS: "8"
+    depends_on:
+      db:
+        condition: service_healthy
+      backend:
+        condition: service_started
+
+  worker-b:
+    build:
+      context: ./backend
+    command: ["python", "worker.py"]
+    environment:
+      DATABASE_URL: postgresql://app:app@db:5432/printreg
+      CLAIM_NAME: "领取进程乙"
+      PROCESS_DELAY_SECONDS: "8"
     depends_on:
       db:
         condition: service_healthy

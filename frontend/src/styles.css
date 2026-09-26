@@ -1,0 +1,119 @@
+:root {
+  font-family: system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #1f2933;
+}
+
+body {
+  margin: 0;
+  background: #f5f6f8;
+}
+
+main {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 16px 20px 48px;
+}
+
+.topnav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  margin: 0 -16px 20px;
+  background: #1f3a5f;
+  color: #fff;
+}
+
+.topnav strong {
+  margin-right: 12px;
+}
+
+.topnav button {
+  background: transparent;
+  color: #d7e3f0;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.topnav button:hover {
+  color: #fff;
+}
+
+.topnav button.active {
+  background: #fff;
+  color: #1f3a5f;
+}
+
+.topnav .spacer {
+  flex: 1;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e2e6ea;
+  border-radius: 10px;
+  padding: 12px 18px 18px;
+  margin-bottom: 18px;
+}
+
+.card h2 {
+  font-size: 17px;
+  margin: 8px 0 12px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: #fff;
+}
+
+th, td {
+  border: 1px solid #dde2e7;
+  padding: 7px 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+th {
+  background: #eef2f6;
+}
+
+input, select {
+  padding: 6px 8px;
+  border: 1px solid #c4ccd4;
+  border-radius: 6px;
+}
+
+button {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #2b6cb0;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #245a94;
+}
+
+.hint {
+  color: #7b8794;
+}
+
+.notice {
+  color: #9a6700;
+  background: #fff8e1;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.ok {
+  color: #1b5e20;
+}
+
+.err {
+  color: #b3261e;
+}
