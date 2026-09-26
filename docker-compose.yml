@@ -27,12 +27,28 @@ services:
       db:
         condition: service_healthy
 
-  worker:
+  worker-a:
     build:
       context: ./backend
     command: ["python", "worker.py"]
     environment:
       DATABASE_URL: postgresql://app:app@db:5432/printreg
+      WORKER_NAME: 领取进程-甲
+      PROCESS_DELAY: "3"
+    depends_on:
+      db:
+        condition: service_healthy
+      backend:
+        condition: service_started
+
+  worker-b:
+    build:
+      context: ./backend
+    command: ["python", "worker.py"]
+    environment:
+      DATABASE_URL: postgresql://app:app@db:5432/printreg
+      WORKER_NAME: 领取进程-乙
+      PROCESS_DELAY: "3"
     depends_on:
       db:
         condition: service_healthy
